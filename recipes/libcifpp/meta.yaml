@@ -1,0 +1,64 @@
+{% set name = "libcifpp" %}
+{% set version = "7.0.9" %}
+
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 1f1d622b03c477cc3445261c71247a6b0a37b8c58d5a1063685da6f081ac1b0c
+
+build:
+  number: 0
+  run_exports:
+    - {{ pin_subpackage('libcifpp', max_pin='x.x') }}
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
+    - cmake
+    - make
+  host:
+    - eigen
+    - libboost-devel
+    - zlib
+
+about:
+  home: https://github.com/PDB-REDO/libcifpp
+  license: BSD-2-Clause
+  license_family: BSD
+  summary: Library containing code to manipulate mmCIF and PDB files
+  description: |
+    As the name implies, this library was originally written to work with mmCIF
+    files using C++ as programming language. The design of this library leans
+    heavily on the structure of CIF files. These files can be thought of as a
+    text dump of a relational databank with, often but not always, a very
+    strict schema describing the data. These schema's are called dictionaries.
+
+    Using information from the content of a mmCIF file and an optional schema,
+    libcifpp allows you to access the data in the file as a collection of
+    datablock each containing a collection of categories with rows of data.
+    The categories can be searched for data using queries written in regular
+    C++ syntax. When a dictionary was specified, inserted data is checked for
+    validity. Likewise removal of data may result in cascaded removal of linked
+    data in other categories using parent/child relationship information.
+
+    Since there were still many programs using the legacy PDB format at the
+    time development started, a layer was added that converts data to and from
+    PDB format into mmCIF format. This means you can manipulate PDB files as if
+    they were normal mmCIF files.
+
+    Apart from this basic functionality, libcifpp also offers code to help with
+    symmetry calculations, 3d manipulations and obtaining information from the
+    CCD Chemical Component Dictionary.
+  doc_url: https://pdb-redo.github.io/libcifpp/
+  dev_url: https://github.com/PDB-REDO/libcifpp
+
+extra:
+  recipe-maintainers:
+    - bkpoon
+    - drlemmus
+    - mhekkel
