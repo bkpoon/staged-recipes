@@ -1,4 +1,4 @@
-{% set name = "libcif" %}
+{% set name = "libcifpp" %}
 {% set version = "2.0.0" %}
 
 
