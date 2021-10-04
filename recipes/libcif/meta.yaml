@@ -1,0 +1,38 @@
+{% set name = "libcif" %}
+{% set version = "2.0.0" %}
+
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 2177ba1e1fa6eec6d71c19a20c7c545ce1d56d7de50043b478f014d582bb984b
+
+build:
+  number: 0
+  skip: true  # [win]
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake
+  host:
+    - boost-cpp
+
+about:
+  home: https://github.com/PDB-REDO/libcifpp
+  license: BSD-2-Clause
+  license_family: BSD
+  summary: Library containing code to manipulate mmCIF and PDB files
+  description: |
+    This library contains code to work with mmCIF and PDB files.
+  doc_url: https://github.com/PDB-REDO/libcifpp
+  dev_url: https://github.com/PDB-REDO/libcifpp
+
+extra:
+  recipe-maintainers:
+    - bkpoon
+    - drlemmus
+    - mhekkel
