@@ -20,6 +20,8 @@ requirements:
     - cmake
   host:
     - boost-cpp
+  run:
+    - boost-cpp
 
 about:
   home: https://github.com/PDB-REDO/libcifpp
