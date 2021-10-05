@@ -1,0 +1,18 @@
+diff --git a/cmake/FindFilesystem.cmake b/cmake/FindFilesystem.cmake
+index 21c98f2..c5c5bd6 100644
+--- a/cmake/FindFilesystem.cmake
++++ b/cmake/FindFilesystem.cmake
+@@ -45,7 +45,7 @@ else()
+ 	set(_found ${CXX_FILESYSTEM_STDCPPFS_NEEDED})
+ 	if(NOT CXX_FILESYSTEM_STDCPPFS_NEEDED)
+ 		# Try the libc++ flag
+-		set(CMAKE_REQUIRED_LIBRARIES ${prev_libraries} -lc++fs)
++		set(CMAKE_REQUIRED_LIBRARIES ${prev_libraries} -lc++experimental)
+ 		check_cxx_source_compiles("${code}" CXX_FILESYSTEM_CPPFS_NEEDED)
+ 		set(_found ${CXX_FILESYSTEM_CPPFS_NEEDED})
+ 	endif()
+@@ -71,4 +71,3 @@ set(Filesystem_FOUND ${_found} CACHE BOOL "TRUE if we can run a program using st
+ if(Filesystem_FIND_REQUIRED AND NOT Filesystem_FOUND)
+     message(FATAL_ERROR "Cannot run simple program using std::filesystem")
+ endif()
+-
