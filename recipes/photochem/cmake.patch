@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7bcb07a..b5dc224 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -56,3 +56,8 @@ if (BUILD_PYTHON_PHOTOCHEM)
+                 
+ endif()
+ 
++# https://stackoverflow.com/questions/3526794/how-do-i-build-a-win32-app-with-a-resource-file-using-cmake-and-mingw
++set(CMAKE_RC_COMPILER_INIT windres)
++ENABLE_LANGUAGE(RC)
++SET(CMAKE_RC_COMPILE_OBJECT
++  "<CMAKE_RC_COMPILER> <FLAGS> -O coff <DEFINES> -i <SOURCE> -o <OBJECT>")
