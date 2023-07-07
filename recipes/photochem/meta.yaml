@@ -21,6 +21,8 @@ requirements:
     - {{ compiler('fortran') }}
     - make
     - cmake
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]
   host:
     - python
     - pip
@@ -38,9 +40,6 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('hdf5') }}
     - {{ pin_compatible('zlib') }}
-    - llvm-openmp  # [osx]
-    - libgomp      # [linux]
-    - _openmp_mutex  # [linux]
     - scipy
     - pyyaml
     - numba
