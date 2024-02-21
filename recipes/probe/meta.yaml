@@ -1,0 +1,40 @@
+{% set name = "probe" %}
+{% set version = "02.26" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/rlabduke/probe/archive/refs/tags/{{ version }}.tar.gz
+  sha256: 285e8ede4d5cfe751f1617f78f6d7e91fb675f29f26f2668bf108b7da8d10816
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - cmake >=3.10
+    - make   # [not win]
+
+test:
+  commands:
+    - test -f ${PREFIX}/bin/probe  # [unix]
+    - ${PREFIX}/bin/probe || true  # [unix]
+
+about:
+  home: https://github.com/rlabduke/probe
+  summary: 'Evaluate and visualize protein interatomic packing'
+  description: |
+    Evaluate and visualize protein interatomic packing
+  license: BSD-2-Clause
+  license_family: BSD
+  license_file: LICENSE.txt
+  doc_url: https://github.com/rlabduke/probe
+  dev_url: https://github.com/rlabduke/probe
+
+extra:
+  recipe-maintainers:
+    - bkpoon
