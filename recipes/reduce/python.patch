@@ -1,0 +1,16 @@
+diff --git a/reduce_src/CMakeLists.txt b/reduce_src/CMakeLists.txt
+index 703e2fe..71c77c1 100644
+--- a/reduce_src/CMakeLists.txt
++++ b/reduce_src/CMakeLists.txt
+@@ -4,8 +4,9 @@
+ cmake_minimum_required(VERSION 3.10.0)
+ project(reduce_src)
+ 
+-set(USE_PYTHON TRUE)
+-FIND_PACKAGE(PythonInterp)
++# set(USE_PYTHON TRUE)
++# FIND_PACKAGE(PythonInterp)
++set(PYTHONINTERP_FOUND FALSE)
+ if (PYTHONINTERP_FOUND)
+   if (UNIX AND NOT APPLE)
+     if (PYTHON_VERSION_MAJOR EQUAL 3)
