@@ -1,0 +1,63 @@
+{% set name = "httpd" %}
+{% set version = "2.4.59" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  - url: https://dlcdn.apache.org/httpd/{{ name }}-{{ version }}.tar.bz2
+    sha256: ec51501ec480284ff52f637258135d333230a7d229c3afa6f6c2f9040e321323
+    folder: httpd
+  - url: https://dlcdn.apache.org//apr/apr-1.7.4.tar.bz2
+    sha256: fc648de983f3a2a6c9e78dea1f180639bd2fad6c06d556d4367a701fe5c35577
+    folder: apr
+  - url: https://dlcdn.apache.org//apr/apr-util-1.6.3.tar.bz2
+    sha256: a41076e3710746326c3945042994ad9a4fcac0ce0277dd8fea076fec3c9772b5
+    folder: apr-util
+  - url: https://github.com/GrahamDumpleton/mod_wsgi/archive/refs/tags/5.0.0.tar.gz
+    folder: wsgi
+
+build:
+  skip: true  # [not linux]
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
+    - {{ compiler('cxx') }}
+    - expat
+    - openssl
+    - perl
+    - python
+  host:
+    - python
+  run:
+    - python
+
+test:
+  commands:
+    - pip check
+
+about:
+  home: https://httpd.apache.org
+  summary: 'The Apache HTTP server project'
+  description: |
+    The Apache HTTP Server Project is an effort to develop and maintain an
+    open-source HTTP server for modern operating systems including UNIX and
+    Windows. The goal of this project is to provide a secure, efficient and
+    extensible server that provides HTTP services in sync with the current
+    HTTP standards.
+    The Apache HTTP Server ("httpd") was launched in 1995 and it has been
+    the most popular web server on the Internet since April 1996. It has
+    celebrated its 25th birthday as a project in February 2020.
+    The Apache HTTP Server is a project of The Apache Software Foundation.
+  license: Apache-2.0
+  license_family: Apache
+  doc_url: https://httpd.apache.org/docs-project/
+  dev_url: https://httpd.apache.org
+
+extra:
+  recipe-maintainers:
+    - bkpoon
