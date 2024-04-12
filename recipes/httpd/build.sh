@@ -37,3 +37,6 @@ cd ..
 echo
 
 mv ${PREFIX}/conf ${PREFIX}/conf.orig
+
+rm -fr ${PREFIX}/build
+rm -fr ${PREFIX}/build-1
