@@ -11,8 +11,6 @@ make install
 cd ..
 echo
 
-ls ${PREFIX}/include
-
 echo "Building apr-util"
 cd apr-util
 ./configure --prefix=${PREFIX} --with-apr=${PREFIX} --with-expat=${PREFIX} --with-openssl=${PREFIX}
@@ -29,7 +27,8 @@ make install
 cd ..
 echo
 
-echo "Building ${WSGI}"
+echo "Building wsgi"
+unset CPPFLAGS
 cd wsgi
 ./configure --prefix=${PREFIX} --with-apxs=${PREFIX}/bin/apxs --with-python=${PREFIX}/bin/python3
 make -j ${CORES}
