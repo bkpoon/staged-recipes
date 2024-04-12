@@ -27,13 +27,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
-    - expat
-    - openssl
     - libtool
     - make
     - perl
     - python
   host:
+    - expat
+    - openssl
+    - perl
     - python
   run:
     - python
