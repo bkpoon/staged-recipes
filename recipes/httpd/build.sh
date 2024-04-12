@@ -35,3 +35,5 @@ make -j ${CORES}
 make install
 cd ..
 echo
+
+mv ${PREFIX}/conf ${PREFIX}/conf.orig
