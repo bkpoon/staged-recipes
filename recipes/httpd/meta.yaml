@@ -52,7 +52,7 @@ requirements:
 
 test:
   commands:
-    - ls
+    - cp -a ${CONDA_PREFIX}/conf.orig ${CONDA_PREFIX}/conf; apachectl --help || true
 
 about:
   home: https://httpd.apache.org
