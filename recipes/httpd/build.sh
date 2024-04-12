@@ -11,6 +11,8 @@ make install
 cd ..
 echo
 
+ls ${PREFIX}/include
+
 echo "Building apr-util"
 cd apr-util
 ./configure --prefix=${PREFIX} --with-apr=${PREFIX} --with-expat=${PREFIX} --with-openssl=${PREFIX}
