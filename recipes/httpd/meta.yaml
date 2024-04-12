@@ -33,7 +33,11 @@ requirements:
     - python
   host:
     - expat
+    - libsqlite
+    - libuuid
+    - libxcrypt
     - openssl
+    - pcre2
     - perl
     - python
   run:
