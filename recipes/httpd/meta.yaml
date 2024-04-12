@@ -30,6 +30,7 @@ requirements:
     - expat
     - openssl
     - libtool
+    - make
     - perl
     - python
   host:
