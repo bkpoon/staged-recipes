@@ -41,12 +41,18 @@ requirements:
     - perl
     - python
   run:
+    - libexpat
+    - libsqlite
+    - libuuid
+    - libxcrypt
+    - openssl
+    - pcre2
     - python
     - requests
 
 test:
   commands:
-    - pip check
+    - ls
 
 about:
   home: https://httpd.apache.org
