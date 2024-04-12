@@ -4,6 +4,7 @@ CORES=4
 
 echo "Building apr"
 cd apr
+touch libtoolT
 ./configure --prefix=${PREFIX}
 make -j ${CORES}
 make install
