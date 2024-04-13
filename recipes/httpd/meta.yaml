@@ -48,6 +48,13 @@ requirements:
     - openssl
     - pcre2
     - python
+
+    - django
+    - latexcodec
+    - postgresql
+    - psycopg2
+    - pybtex
+    - pytz
     - requests
 
 test:
