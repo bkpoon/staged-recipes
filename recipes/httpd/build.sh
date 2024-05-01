@@ -21,7 +21,13 @@ echo
 
 echo "Building httpd"
 cd httpd
-./configure --prefix=${PREFIX} --with-ssl=${PREFIX} --with-apr=${PREFIX} --with-apr-util=${PREFIX}
+./configure \
+  --prefix=${PREFIX} \
+  --with-ssl=${PREFIX} \
+  --with-apr=${PREFIX} \
+  --with-apr-util=${PREFIX} \
+  --enable-http2 \
+  --with-nghttp2=${PREFIX}
 make -j ${CORES}
 make install
 cd ..
