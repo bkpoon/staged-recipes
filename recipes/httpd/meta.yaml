@@ -20,7 +20,7 @@ source:
 
 build:
   skip: true  # [not linux]
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -33,6 +33,7 @@ requirements:
     - python
   host:
     - expat
+    - libnghttp2
     - libsqlite
     - libuuid
     - libxcrypt
@@ -42,6 +43,7 @@ requirements:
     - python
   run:
     - libexpat
+    - libnghttp2
     - libsqlite
     - libuuid
     - libxcrypt
@@ -51,6 +53,7 @@ requirements:
 
     - django
     - latexcodec
+    - mysql
     - postgresql
     - psycopg2
     - pybtex
