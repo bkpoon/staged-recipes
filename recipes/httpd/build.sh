@@ -42,6 +42,14 @@ make install
 cd ..
 echo
 
+echo "Building php"
+cd php
+./configure --prefix=${PREFIX} --with-iconv=${PREFIX} --with-libxml=${PREFIX} --with-apxs2=${PREFIX}/bin/apxs
+make -j ${CORES}
+make install
+cd ..
+echo
+
 mv ${PREFIX}/conf ${PREFIX}/conf.orig
 
 rm -fr ${PREFIX}/build
