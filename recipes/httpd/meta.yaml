@@ -18,6 +18,8 @@ source:
   - url: https://github.com/GrahamDumpleton/mod_wsgi/releases/download/mod_wsgi-6.1.1/mod_wsgi-6.1.1.tar.gz
     sha256: a42d11ba45d2050ab456a474d034e938605ca76386233ef404daa8b0388ca60e
     folder: wsgi
+  - url: https://www.php.net/distributions/php-8.3.8.tar.xz
+    folder: php
 
 build:
   skip: true  # [not linux or py>311]
@@ -33,11 +35,13 @@ requirements:
     - python
   host:
     - expat
+    - libiconv
     - libnghttp2
     - libpython
     - libsqlite
     - libuuid
     - libxcrypt
+    - libxml2
     - openssl
     - pcre2
     - python
