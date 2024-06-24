@@ -46,6 +46,7 @@ requirements:
     - libxcrypt
     - libxml2
     - lua
+    - oniguruma
     - openssl
     - pcre2
     - python
