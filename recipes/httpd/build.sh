@@ -34,15 +34,20 @@ cd ..
 echo
 
 echo "Building wsgi"
+OLD_CPPFLAGS=${CPPFLAGS}
 unset CPPFLAGS
 cd wsgi
 ./configure --prefix=${PREFIX} --with-apxs=${PREFIX}/bin/apxs --with-python=${PREFIX}/bin/python3
 make -j ${CORES}
 make install
 cd ..
+CPPFLAGS=${OLD_CPPFLAGS}
 echo
 
 echo "Building php"
+OLD_CFLAGS=${CFLAGS}
+CFLAGS="${CFLAGS} -std=gnu99"
+CPPFLAGS="${CPPFLAGS} -std=gnu99 -E"
 cd php
 ./configure --prefix=${PREFIX} --with-iconv=${PREFIX} --with-libxml=${PREFIX} --with-apxs2=${PREFIX}/bin/apxs
 make -j ${CORES}
