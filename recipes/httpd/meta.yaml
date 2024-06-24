@@ -29,10 +29,12 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
+    - bison
     - libtool
     - make
     - perl
     - python
+    - re2c
   host:
     - expat
     - libiconv
