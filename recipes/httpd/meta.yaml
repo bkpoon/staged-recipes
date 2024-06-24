@@ -43,6 +43,7 @@ requirements:
     - libuuid
     - libxcrypt
     - libxml2
+    - lua
     - openssl
     - pcre2
     - perl
@@ -53,6 +54,7 @@ requirements:
     - libsqlite
     - libuuid
     - libxcrypt
+    - lua
     - openssl
     - pcre2
     - python
