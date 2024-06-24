@@ -21,7 +21,7 @@ source:
     folder: php
 
 build:
-  skip: true  # [not linux]
+  skip: true  # [not linux or py!=311]
   number: 1
 
 requirements:
