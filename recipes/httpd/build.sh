@@ -45,10 +45,8 @@ CPPFLAGS=${OLD_CPPFLAGS}
 echo
 
 echo "Building php"
-OLD_CFLAGS=${CFLAGS}
-CFLAGS="${CFLAGS} -std=gnu99"
-CPPFLAGS="${CPPFLAGS} -std=gnu99 -E"
 cd php
+find . -type f -name "zend_max_execution_timer.c" -exec sed -i 's/CLOCK_BOOTTIME/CLOCK_MONOTONIC/g' {} +
 ./configure --prefix=${PREFIX} --with-iconv=${PREFIX} --with-libxml=${PREFIX} --with-apxs2=${PREFIX}/bin/apxs
 make -j ${CORES}
 make install
