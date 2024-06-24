@@ -13,7 +13,11 @@ echo
 
 echo "Building apr-util"
 cd apr-util
-./configure --prefix=${PREFIX} --with-apr=${PREFIX} --with-expat=${PREFIX} --with-openssl=${PREFIX}
+./configure \
+  --prefix=${PREFIX} \
+  --with-apr=${PREFIX} \
+  --with-expat=${PREFIX} \
+  --with-openssl=${PREFIX}
 make -j ${CORES}
 make install
 cd ..
@@ -27,7 +31,9 @@ cd httpd
   --with-apr=${PREFIX} \
   --with-apr-util=${PREFIX} \
   --enable-http2 \
-  --with-nghttp2=${PREFIX}
+  --with-nghttp2=${PREFIX} \
+  --enable-lua \
+  --with-lua=${PREFIX}
 make -j ${CORES}
 make install
 cd ..
@@ -37,7 +43,10 @@ echo "Building wsgi"
 OLD_CPPFLAGS=${CPPFLAGS}
 unset CPPFLAGS
 cd wsgi
-./configure --prefix=${PREFIX} --with-apxs=${PREFIX}/bin/apxs --with-python=${PREFIX}/bin/python3
+./configure \
+  --prefix=${PREFIX} \
+  --with-apxs=${PREFIX}/bin/apxs \
+  --with-python=${PREFIX}/bin/python3
 make -j ${CORES}
 make install
 cd ..
@@ -47,7 +56,11 @@ echo
 echo "Building php"
 cd php
 find . -type f -name "zend_max_execution_timer.c" -exec sed -i 's/CLOCK_BOOTTIME/CLOCK_MONOTONIC/g' {} +
-./configure --prefix=${PREFIX} --with-iconv=${PREFIX} --with-libxml=${PREFIX} --with-apxs2=${PREFIX}/bin/apxs
+./configure \
+  --prefix=${PREFIX} \
+  --with-iconv=${PREFIX} \
+  --with-libxml=${PREFIX} \
+  --with-apxs2=${PREFIX}/bin/apxs
 make -j ${CORES}
 make install
 cd ..
