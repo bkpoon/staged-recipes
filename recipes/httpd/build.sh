@@ -60,7 +60,9 @@ find . -type f -name "zend_max_execution_timer.c" -exec sed -i 's/CLOCK_BOOTTIME
   --prefix=${PREFIX} \
   --with-iconv=${PREFIX} \
   --with-libxml=${PREFIX} \
-  --with-apxs2=${PREFIX}/bin/apxs
+  --with-apxs2=${PREFIX}/bin/apxs \
+  --enable-mbstring \
+  --enable-intl
 make -j ${CORES}
 make install
 cd ..
