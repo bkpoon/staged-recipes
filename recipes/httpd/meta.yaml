@@ -17,7 +17,8 @@ source:
     folder: apr-util
   - url: https://github.com/GrahamDumpleton/mod_wsgi/archive/refs/tags/5.0.0.tar.gz
     folder: wsgi
-  - url: https://www.php.net/distributions/php-8.3.8.tar.xz
+  # - url: https://www.php.net/distributions/php-8.3.8.tar.xz
+  - url: https://www.php.net/distributions/php-7.0.26.tar.xz
     folder: php
 
 build:
@@ -43,7 +44,7 @@ requirements:
     - libsqlite
     - libuuid
     - libxcrypt
-    - libxml2
+    - libxml2 =2.9
     - lua
     - oniguruma
     - openssl
@@ -58,7 +59,7 @@ requirements:
     - libsqlite
     - libuuid
     - libxcrypt
-    - libxml2
+    - libxml2 =2.9
     - lua
     - oniguruma
     - openssl

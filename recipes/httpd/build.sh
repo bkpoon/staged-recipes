@@ -59,7 +59,7 @@ find . -type f -name "zend_max_execution_timer.c" -exec sed -i 's/CLOCK_BOOTTIME
 ./configure \
   --prefix=${PREFIX} \
   --with-iconv=${PREFIX} \
-  --with-libxml=${PREFIX} \
+  --with-libxml-dir=${PREFIX} \
   --with-apxs2=${PREFIX}/bin/apxs \
   --enable-mbstring \
   --enable-intl
