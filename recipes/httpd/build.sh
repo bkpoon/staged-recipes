@@ -58,11 +58,12 @@ cd php
 find . -type f -name "zend_max_execution_timer.c" -exec sed -i 's/CLOCK_BOOTTIME/CLOCK_MONOTONIC/g' {} +
 ./configure \
   --prefix=${PREFIX} \
+  --enable-intl \
+  --enable-mbstring \
+  --with-apxs2=${PREFIX}/bin/apxs \
   --with-iconv=${PREFIX} \
   --with-libxml=${PREFIX} \
-  --with-apxs2=${PREFIX}/bin/apxs \
-  --enable-mbstring \
-  --enable-intl
+  --with-openssl
 make -j ${CORES}
 make install
 cd ..
