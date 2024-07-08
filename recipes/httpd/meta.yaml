@@ -1,5 +1,5 @@
 {% set name = "httpd" %}
-{% set version = "2.4.59" %}
+{% set version = "2.4.61" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://dlcdn.apache.org/httpd/{{ name }}-{{ version }}.tar.bz2
-    sha256: ec51501ec480284ff52f637258135d333230a7d229c3afa6f6c2f9040e321323
+    sha256: ea8ba86fd95bd594d15e46d25ac5bbda82ae0c9122ad93998cc539c133eaceb6
     folder: httpd
   - url: https://dlcdn.apache.org//apr/apr-1.7.4.tar.bz2
     sha256: fc648de983f3a2a6c9e78dea1f180639bd2fad6c06d556d4367a701fe5c35577
@@ -20,7 +20,7 @@ source:
 
 build:
   skip: true  # [not linux]
-  number: 1
+  number: 0
 
 requirements:
   build:
