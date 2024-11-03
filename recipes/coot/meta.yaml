@@ -20,6 +20,9 @@ source:
     folder: mmdb2
   - url: {{ extras_place}}/ssm-1.4.tar.gz
     folder: ssm
+  - patches:
+      # for clang and C++11 "C++11 requires a space between literal and identifier"
+      - patches/ssm_superpose.patch
 
 build:
   number: 0
@@ -29,7 +32,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
-    - m4
+    - m4  # [unix]
     - make
   host:
     - epoxy
