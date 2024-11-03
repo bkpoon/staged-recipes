@@ -97,3 +97,8 @@ make -j ${CORES}
 make install
 cd ..
 echo
+
+# copy monomer library and reference structures
+mkdir -p ${PREFIX}/share/coot
+cp -a monomers ${PREFIX}/share/coot
+cp -a reference-structures ${PREFIX}/share/coot

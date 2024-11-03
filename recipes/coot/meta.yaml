@@ -20,6 +20,10 @@ source:
     folder: mmdb2
   - url: {{ extras_place}}/ssm-1.4.tar.gz
     folder: ssm
+  - url: {{ extras_place }}/reference-structures.tar.gz
+    folder: reference-structures
+  - url: {{ extras_place }}/refmac-monomer-library.tar.gz
+    folder: monomers
   - patches:
       # for clang and C++11 "C++11 requires a space between literal and identifier"
       - patches/ssm_superpose.patch
