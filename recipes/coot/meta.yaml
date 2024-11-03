@@ -37,18 +37,24 @@ requirements:
     - libtool  # [unix]
     - m4  # [unix]
     - make
+    - pkg-config
     - swig
   host:
     - epoxy
+    - expat
     - gemmi
     - glib
     - guile  # [linux]
+    - libboost-python-devel =1.82
+    - libboost-devel =1.82
+    - libgl-devel  # [linux]
     - pygobject
     - python
     - gtk4
     - rdkit =2023.09.4
   run:
     - epoxy
+    - expat
     - gemmi
     - glib
     - guile  # [linux]
