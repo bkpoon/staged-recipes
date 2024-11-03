@@ -3,7 +3,7 @@
 {% set extras_place = "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies" %}
 
 package:
-  skip: true  # [win]
+  skip: true  # [win or py>39]
   name: {{ name|lower }}
   version: {{ version }}
 
