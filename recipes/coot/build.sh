@@ -79,9 +79,6 @@ export PKG_CONFIG_PATH=${PREFIX}/lib/pkgconfig
 ./configure \
   --prefix=${PREFIX} \
   --with-fftw-prefix=${PREFIX} \
-  SHELL=/bin/bash \
-  PYTHON=python3 \
-  COOT_BUILD_INFO_STRING="$coot_build_info_string" \
   --with-boost=${PREFIX}  \
   --with-boost-libdir=${PREFIX}/lib  \
   --with-enhanced-ligand-tools \
