@@ -29,6 +29,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
+    - m4
     - make
   host:
     - epoxy
