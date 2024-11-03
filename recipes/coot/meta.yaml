@@ -32,11 +32,13 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
+    - automake
     - m4  # [unix]
     - make
   host:
     - epoxy
     - gemmi
+    - glib
     - guile  # [linux]
     - pygobject
     - python
@@ -45,6 +47,7 @@ requirements:
   run:
     - epoxy
     - gemmi
+    - glib
     - guile  # [linux]
     - pygobject
     - python
