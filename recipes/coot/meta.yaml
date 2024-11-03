@@ -34,8 +34,10 @@ requirements:
     - {{ compiler('cxx') }}
     - autoconf  # [unix]
     - automake  # [unix]
+    - libtool  # [unix]
     - m4  # [unix]
     - make
+    - swig
   host:
     - epoxy
     - gemmi
