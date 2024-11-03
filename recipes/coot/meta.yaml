@@ -32,7 +32,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
-    - automake
+    - autoconf  # [unix]
+    - automake  # [unix]
     - m4  # [unix]
     - make
   host:
