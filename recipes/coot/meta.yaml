@@ -58,6 +58,8 @@ requirements:
     - cairo
     - epoxy
     - expat
+    - freetype
+    - gdk-pixbuf
     - gemmi
     - glfw
     - glib
@@ -69,6 +71,7 @@ requirements:
     - libcurl
     - libgl-devel  # [linux]
     - libpng
+    - libsqlite
     - pygobject
     - python
     - gtk4
