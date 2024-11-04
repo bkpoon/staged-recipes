@@ -64,14 +64,14 @@ requirements:
     - glm
     - gsl
     - guile  # [linux]
-    - libboost-python-devel =1.82
-    - libboost-devel =1.82
+    - libboost-python-devel
+    - libboost-devel
     - libcurl
     - libgl-devel  # [linux]
     - pygobject
     - python
     - gtk4
-    - rdkit =2023.09.4
+    - rdkit
   run:
     - epoxy
     - expat
@@ -84,7 +84,7 @@ requirements:
     - pygobject
     - python
     - gtk4
-    - rdkit =2023.09.4
+    - rdkit
 
 test:
   # Some packages might need a `test/commands` key to check CLI.
