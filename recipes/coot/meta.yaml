@@ -49,6 +49,8 @@ requirements:
     - autoconf  # [unix]
     - automake  # [unix]
     - libtool  # [unix]
+    - llvm-openmp  # [osx]
+    - libgomp      # [linux]
     - m4  # [unix]
     - make
     - pkg-config
