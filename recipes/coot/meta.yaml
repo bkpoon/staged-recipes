@@ -73,6 +73,7 @@ requirements:
     - python
     - gtk4
     - rdkit
+    - zlib
   run:
     - epoxy
     - expat
