@@ -33,7 +33,6 @@ build:
   ignore_run_exports:
     - expat
     - gemmi
-    - glib
     - guile  # [linux]
     - pygobject
     - glfw
@@ -56,6 +55,7 @@ requirements:
     - pkg-config
     - swig
   host:
+    - cairo
     - epoxy
     - expat
     - gemmi
@@ -79,7 +79,6 @@ requirements:
     - expat
     - gemmi
     - glfw
-    - glib
     - gsl
     - guile  # [linux]
     - libcurl
