@@ -30,6 +30,13 @@ source:
 
 build:
   number: 0
+  ignore_run_exports:
+    - gemmi
+    - glib
+    - pygobject
+    - glfw
+    - libboost
+    - libexpat
 
 requirements:
   build:
