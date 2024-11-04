@@ -61,6 +61,7 @@ requirements:
     - guile  # [linux]
     - libboost-python-devel =1.82
     - libboost-devel =1.82
+    - libcurl
     - libgl-devel  # [linux]
     - pygobject
     - python
@@ -74,6 +75,7 @@ requirements:
     - glib
     - gsl
     - guile  # [linux]
+    - libcurl
     - pygobject
     - python
     - gtk4
