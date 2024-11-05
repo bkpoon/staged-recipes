@@ -71,6 +71,7 @@ requirements:
     - libcurl
     - libgl-devel  # [linux]
     - libgraphene
+    - libopenblas
     - libpng
     - libsqlite
     - pango
