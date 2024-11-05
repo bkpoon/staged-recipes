@@ -70,8 +70,10 @@ requirements:
     - libboost-devel
     - libcurl
     - libgl-devel  # [linux]
+    - libgraphene
     - libpng
     - libsqlite
+    - pango
     - pygobject
     - python
     - gtk4
@@ -85,6 +87,7 @@ requirements:
     - gsl
     - guile  # [linux]
     - libcurl
+    - libgraphene
     - pygobject
     - python
     - gtk4
