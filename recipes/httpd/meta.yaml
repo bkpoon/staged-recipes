@@ -34,6 +34,7 @@ requirements:
     - libtool
     - make
     - perl
+    - pkg-config
     - python
     - re2c
   host:
