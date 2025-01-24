@@ -18,8 +18,8 @@ source:
   - url: https://github.com/GrahamDumpleton/mod_wsgi/releases/download/mod_wsgi-6.1.1/mod_wsgi-6.1.1.tar.gz
     sha256: a42d11ba45d2050ab456a474d034e938605ca76386233ef404daa8b0388ca60e
     folder: wsgi
-  - url: https://www.php.net/distributions/php-8.3.15.tar.xz
-    sha256: 3df5d45637283f759eef8fc3ce03de829ded3e200c3da278936a684955d2f94f
+  - url: https://www.php.net/distributions/php-8.3.16.tar.xz
+    sha256: 40d3b4e6cac33d3bcefe096d75a28d4fb4e3a9615eb20a4de55ba139fbfacdd5
     folder: php
 
 build:
