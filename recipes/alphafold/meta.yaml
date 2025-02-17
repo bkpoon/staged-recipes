@@ -1,0 +1,46 @@
+{% set name = "AlphaFold" %}
+{% set version = "2.3.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/google-deepmind/alphafold/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 4ea8005ba1b573fa1585e4c29b7d188c5cbfa59b4e4761c9f0c15c9db9584a8e
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+# dependencies are assumend to already exist in conda environment
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools
+  run:
+    - python
+
+test:
+  imports:
+    - alphafold
+    - simplejson.tests
+  commands:
+    - pip check
+
+about:
+  home: https://github.com/google-deepmind/alphafold
+  summary: 'Open source code for AlphaFold 2'
+  description: |
+    This package provides an implementation of the inference pipeline of AlphaFold v2.
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE
+  doc_url: https://github.com/google-deepmind/alphafold
+  dev_url: https://github.com/google-deepmind/alphafold
+
+extra:
+  recipe-maintainers:
+    - bkpoon
