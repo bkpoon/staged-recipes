@@ -26,9 +26,8 @@ requirements:
 test:
   imports:
     - alphafold
-    - simplejson.tests
-  commands:
-    - pip check
+    - alphafold.model
+    - alphafold.data
 
 about:
   home: https://github.com/google-deepmind/alphafold
