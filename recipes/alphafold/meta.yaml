@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/google-deepmind/alphafold/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/google-deepmind/alphafold/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 4ea8005ba1b573fa1585e4c29b7d188c5cbfa59b4e4761c9f0c15c9db9584a8e
 
 build:
