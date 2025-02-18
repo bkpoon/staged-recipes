@@ -1,0 +1,45 @@
+{% set name = "aimnet2calc" %}
+{% set version = "0.0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+# commit a56ade16193daa0f0d5d89180538e15d94aee659
+source:
+  git_url: https://github.com/zubatyuk/aimnet2calc.git
+  git_rev: a56ade16193daa0f0d5d89180538e15d94aee659
+
+build:
+  noarch: true
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+    - setuptools
+  run:
+    - python
+
+test:
+  imports:
+    - aimnet2calc
+
+about:
+  home: https://github.com/zubatyuk/aimnet2calc
+  summary: 'AIMNet2 Calculator: Fast, Accurate Molecular Simulations'
+  description: |
+    This package integrates the powerful AIMNet2 neural network potential
+    into your simulation workflows. AIMNet2 provides fast and reliable
+    energy, force, and property calculations for molecules containing a
+    diverse range of elements.
+  license: MIT
+  license_family: MIT
+  doc_url: https://github.com/zubatyuk/aimnet2calc
+  dev_url: https://github.com/zubatyuk/aimnet2calc
+
+extra:
+  recipe-maintainers:
+    - bkpoon
