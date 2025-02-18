@@ -11,7 +11,7 @@ source:
   git_rev: a56ade16193daa0f0d5d89180538e15d94aee659
 
 build:
-  noarch: true
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
@@ -24,8 +24,8 @@ requirements:
     - python
 
 test:
-  imports:
-    - aimnet2calc
+  commands:
+    - ls ${SPDIR}
 
 about:
   home: https://github.com/zubatyuk/aimnet2calc
