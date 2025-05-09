@@ -39,7 +39,7 @@ requirements:
     - re2c
   host:
     - expat
-    - icu
+    - icu >=75
     - libiconv
     - libnghttp2
     - libsqlite
