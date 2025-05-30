@@ -11,4 +11,4 @@ cmake ${CMAKE_ARGS} --trace-expand -S . -B build \
 cmake --build build
 cmake --install build
 
-ctest --output-on-failure --test-dir build || true
+ctest --output-on-failure --test-dir build

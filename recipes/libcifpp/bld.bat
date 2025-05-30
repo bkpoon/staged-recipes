@@ -10,5 +10,3 @@ cd ..
 cmake --install build
 
 ctest --output-on-failure --test-dir build -C Release
-
-dir build

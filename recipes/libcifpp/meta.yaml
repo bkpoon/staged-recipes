@@ -1,5 +1,5 @@
 {% set name = "libcifpp" %}
-{% set version = "7.0.9" %}
+{% set version = "8.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/PDB-REDO/libcifpp/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 1f1d622b03c477cc3445261c71247a6b0a37b8c58d5a1063685da6f081ac1b0c
+  sha256: 53f0ff205711428dcabf9451b23804091539303cea9d2f54554199144ca0fc4e
 
 build:
   number: 0
