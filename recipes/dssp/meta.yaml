@@ -1,0 +1,59 @@
+{% set name = "dssp" %}
+{% set version = "4.5.3" %}
+
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/PDB-REDO/dssp/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 8dd92fdf2a252a170c8a811e3adb752e0f2860318ecb2b6ed5e4fd1d2b5ce5e6
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - {{ stdlib('c') }}
+    - cmake
+    - make
+  host:
+    - catch2
+    - python
+    - libboost-python-devel
+    - libcifpp
+    - zlib
+  run:
+    - python
+
+about:
+  home: https://github.com/PDB-REDO/dssp
+  license: BSD-2-Clause
+  license_family: BSD
+  summary: Application to assign secondary structure to proteins
+  description: |
+    This is a rewrite of DSSP, now offering full mmCIF support. The difference
+    with previous releases of DSSP is that it now writes out an annotated mmCIF
+    file by default, storing the secondary structure information in the
+    _struct_conf category.
+
+    Another new feature in this version of DSSP is that it now defines
+    Poly-Proline helices as well.
+
+    The DSSP program was designed by Wolfgang Kabsch and Chris Sander to
+    standardize secondary structure assignment. DSSP is a database of secondary
+    structure assignments (and much more) for all protein entries in the
+    Protein Data Bank (PDB). DSSP is also the program that calculates DSSP
+    entries from PDB entries.
+
+    DSSP does not predict secondary structure.
+  doc_url: https://github.com/PDB-REDO/dssp
+  dev_url: https://github.com/PDB-REDO/dssp
+
+extra:
+  recipe-maintainers:
+    - bkpoon
+    - drlemmus
+    - mhekkel
