@@ -17,13 +17,13 @@ source:
     folder: apr-util
   - url: https://github.com/GrahamDumpleton/mod_wsgi/archive/refs/tags/5.0.2.tar.gz
     folder: wsgi
-  - url: https://www.php.net/distributions/php-8.3.21.tar.xz
-    sha256: 4dfb329f209a552c3716394fc123bb62e80a468b55ce27fc8cb0fd5f30b9dcd6
+  - url: https://www.php.net/distributions/php-8.3.24.tar.xz
+    sha256: 388ee5fd111097e97bae439bff46aec4ea27f816d3f0c2cb5490a41410d44251
     folder: php
 
 build:
   skip: true  # [not linux or py!=311]
-  number: 2
+  number: 1
 
 requirements:
   build:
