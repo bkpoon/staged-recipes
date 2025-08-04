@@ -1,5 +1,5 @@
 {% set name = "httpd" %}
-{% set version = "2.4.63" %}
+{% set version = "2.4.65" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://dlcdn.apache.org/httpd/{{ name }}-{{ version }}.tar.bz2
-    sha256: 88fc236ab99b2864b248de7d49a008ec2afd7551e64dce8b95f58f32f94c46ab
+    sha256: 58b8be97d9940ec17f7656c0c6b9f41b618aac468b894b534148e3296c53b8b3
     folder: httpd
-  - url: https://dlcdn.apache.org//apr/apr-1.7.5.tar.bz2
-    sha256: cd0f5d52b9ab1704c72160c5ee3ed5d3d4ca2df4a7f8ab564e3cb352b67232f2
+  - url: https://dlcdn.apache.org//apr/apr-1.7.6.tar.bz2
+    sha256: 49030d92d2575da735791b496dc322f3ce5cff9494779ba8cc28c7f46c5deb32
     folder: apr
   - url: https://dlcdn.apache.org//apr/apr-util-1.6.3.tar.bz2
     sha256: a41076e3710746326c3945042994ad9a4fcac0ce0277dd8fea076fec3c9772b5
