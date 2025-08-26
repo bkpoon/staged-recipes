@@ -1,0 +1,67 @@
+context:
+  name: cctbx.xfel
+  version: "2025.7"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/cctbx/cctbx_project/releases/download/v{{ version }}/cctbx-{{ version }}.tar.gz
+  sha256: 05dc073224ca3ef4e41acf575a2c1a6fd7b157a6c56540bcdf5aec5aa7ccf0e2
+
+build:
+  skip:
+    - win
+  number: 0
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib('c') }}
+  host:
+    - libboost-python-devel
+    - libboost-devel
+    - python
+    - dials
+    - pip
+    - scons
+    - setuptools
+  run:
+    - python
+    - dials
+
+tests:
+  - python:
+      imports:
+      - xfel
+      pip_check: true
+
+about:
+  homepage: https://cci.lbl.gov/xfel/
+  summary: 'Open-source tools for serial crystallographic data processing'
+  description: |
+    cctbx.xfel is a suite of software tools designed to process
+    diffraction data from serial femtosecond crystallography (SFX)
+    measurements at an X-ray free-electron laser (XFEL) or a
+    synchrotron. Built on the Computational Crystallographic Toolbox
+    (cctbx), the same toolbox on which Phenix, DIALS, LABELIT, and
+    post-refinement and merging program, PRIME are built, it enables
+    the user to solve difficult problems relating to processing serial
+    crystallographic data. The programs and modules provided by
+    cctbx.xfel can reduce a large set of still diffraction images
+    recorded at Stanford’s Linac Coherent Light Source (LCLS), SACLA,
+    the European XFEL, or a synchrotron, to a single MTZ file
+    containing merged reflection intensities suitable for structure
+    solution.
+  license: BSD-3-Clause-LBNL
+  license_file: LICENSE.txt
+  documentation: https://cci.lbl.gov/xfel/
+  repository: https://github.com/cctbx/cctbx_project/tree/master/xfel
+
+extra:
+  recipe-maintainers:
+    - bkpoon
+    - dwpaley
+    - phyy-nx
