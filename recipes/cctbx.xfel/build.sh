@@ -18,11 +18,7 @@ rm -fr ./modules/dxtbx/libtbx_refresh.py
 
 # build
 export CCTBX_SKIP_CHEMDATA_CACHE_REBUILD=1
-${PYTHON} bootstrap.py build \
-  --builder=xfel \
-  --use-conda ${PREFIX} \
-  --nproc ${CPU_COUNT} \
-  --config-flags="--compiler=conda" \
-  --config-flags="--use_environment_flags" \
-  --config-flags="--no_bin_python" \
-  --config-flags="--skip_phenix_dispatchers"
+mkdir build
+cd build
+libtbx.configure xfel
+libtbx.scons ${CPU_COUNT}
