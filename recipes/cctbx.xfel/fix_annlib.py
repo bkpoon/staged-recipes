@@ -9,7 +9,7 @@ def run():
       for line in lines:
         line = line.rstrip()
         if '"ann"' in line:
-          line.replace('"ann"', '"ann_cctbx"')
+          line = line.replace('"ann"', '"ann_cctbx"')
         f.write(line)
         f.write('\n')
 
