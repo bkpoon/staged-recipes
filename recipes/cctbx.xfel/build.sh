@@ -16,6 +16,11 @@ rm -fr ./modules/scons
 # remove some libtbx_refresh.py files
 rm -fr ./modules/dxtbx/libtbx_refresh.py
 
+# change libann to libann_cctbx
+cd modules/cctbx_project/xfel
+${PYTHON} ${RECIPE_DIR}/fix_annlib.py
+cd ../../..
+
 # configure
 export CCTBX_SKIP_CHEMDATA_CACHE_REBUILD=1
 mkdir build
