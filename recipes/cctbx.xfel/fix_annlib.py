@@ -7,7 +7,7 @@ def run():
       lines = f.readlines()
     with open(sconscript, 'w') as f:
       for line in lines:
-        line = line.strip()
+        line = line.rstrip()
         if '"ann"' in line:
           line.replace('"ann"', '"ann_cctbx"')
         f.write(line)
