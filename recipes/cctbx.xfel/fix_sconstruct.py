@@ -3,7 +3,7 @@ def run():
     lines = f.readlines()
   with open('SConstruct', 'w') as f:
     for line in lines:
-      line = line.strip()
+      line = line.rstrip()
       # add dxtbx SConscript for dxtbx includes
       if 'spotfinder' in line:
         f.write('SConscript("dxtbx/SConscript")')
