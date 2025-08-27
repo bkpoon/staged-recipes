@@ -66,3 +66,9 @@ CCTBX_CONDA_BUILD=./modules/cctbx_project/libtbx/auto_build/conda_build
 echo Removing some duplicate dispatchers
 find ${PREFIX}/bin -name "*show_dist_paths" -not -name "libtbx.show_dist_paths" -type f -delete
 find ${PREFIX}/bin -name "*show_build_path" -not -name "libtbx.show_build_path" -type f -delete
+
+# remove extraneous stuff in share
+rm -fr ${PREFIX}/cxi_user
+rm -fr ${PREFIX}/share/cctbx
+rm -fr ${PREFIX}/share/glib-2.0
+rm -fr ${PREFIX}/share/icons
