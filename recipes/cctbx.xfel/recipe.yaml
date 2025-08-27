@@ -15,6 +15,7 @@ source:
 build:
   skip:
     - win
+    - match(python, "<3.11")
   number: 0
 
 requirements:
