@@ -42,3 +42,27 @@ ${PYTHON} ${RECIPE_DIR}/fix_sconstruct.py
 
 # build
 libtbx.scons -j ${CPU_COUNT}
+
+# remove intermediate objects in build directory
+find . -name "*.o" -type f -delete
+cd ..
+
+# remove simtbx
+rm -fr ./build/*simtbx*
+rm -fr ./build/lib/simtbx*
+rm -fr ./modules/cctbx_project/simtbx
+
+# fix rpath on macOS because libraries and extensions will be in different locations
+if [[ ! -z "$MACOSX_DEPLOYMENT_TARGET" ]]; then
+  echo Fixing rpath:
+  ${PYTHON} ${RECIPE_DIR}/fix_macos_rpath.py
+fi
+
+# install
+CCTBX_CONDA_BUILD=./modules/cctbx_project/libtbx/auto_build/conda_build
+./build/bin/libtbx.python ${CCTBX_CONDA_BUILD}/install_build.py --preserve-egg-dir
+
+# remove extra copies of dispatchers
+echo Removing some duplicate dispatchers
+find ${PREFIX}/bin -name "*show_dist_paths" -not -name "libtbx.show_dist_paths" -type f -delete
+find ${PREFIX}/bin -name "*show_build_path" -not -name "libtbx.show_build_path" -type f -delete
