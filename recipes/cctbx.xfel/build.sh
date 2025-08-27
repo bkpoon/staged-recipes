@@ -16,9 +16,14 @@ rm -fr ./modules/scons
 # remove some libtbx_refresh.py files
 rm -fr ./modules/dxtbx/libtbx_refresh.py
 
-# build
+# configure
 export CCTBX_SKIP_CHEMDATA_CACHE_REBUILD=1
 mkdir build
 cd build
 libtbx.configure xfel
-libtbx.scons ${CPU_COUNT}
+
+# fix SConstruct
+${PYTHON} ${RECIPE_DIR}/fix_sconstruct.py
+
+# build
+libtbx.scons -j ${CPU_COUNT}
