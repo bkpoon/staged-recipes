@@ -23,6 +23,7 @@ requirements:
     - ${{ compiler('cxx') }}
     - ${{ stdlib('c') }}
   host:
+    - eigen
     - libboost-python-devel
     - libboost-devel
     - python
@@ -30,9 +31,16 @@ requirements:
     - pip
     - scons
     - setuptools
+
+    - git
+    - git-lfs
+
   run:
-    - python
     - dials
+    - mysql
+    - mysql-client
+    - pydrive2
+    - python
 
 tests:
   - python:
