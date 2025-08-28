@@ -39,8 +39,9 @@ requirements:
 
   run:
     - dials
+    - iota
     - mysql
-    - mysql-client
+    - mysqlclient
     - pydrive2
     - python
 
