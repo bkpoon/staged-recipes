@@ -21,9 +21,6 @@ fi
 export CFLAGS="${CFLAGS} -O3"
 export CXXFLAGS="${CXXFLAGS} -O3"
 
-# link bootstrap.py
-ln -s modules/cctbx_project/libtbx/auto_build/bootstrap.py
-
 # remove extra source code
 rm -fr ./modules/boost
 rm -fr ./modules/eigen
@@ -41,7 +38,7 @@ cd ../../..
 export CCTBX_SKIP_CHEMDATA_CACHE_REBUILD=1
 mkdir build
 cd build
-libtbx.configure xfel uc_metrics --no_bin_python
+libtbx.configure prime uc_metrics xfel --no_bin_python
 
 # fix SConstruct
 ${PYTHON} ${RECIPE_DIR}/fix_sconstruct.py
