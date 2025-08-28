@@ -38,10 +38,14 @@ cd ../../..
 export CCTBX_SKIP_CHEMDATA_CACHE_REBUILD=1
 mkdir build
 cd build
-libtbx.configure prime uc_metrics xfel --no_bin_python
+libtbx.configure uc_metrics xfel --no_bin_python
 
 # fix SConstruct
 ${PYTHON} ${RECIPE_DIR}/fix_sconstruct.py
+echo "SConstruct"
+echo "=========="
+cat SConstruct
+echo "=========="
 
 # build
 libtbx.scons -j ${CPU_COUNT}

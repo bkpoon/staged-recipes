@@ -8,8 +8,6 @@ def run():
       if 'spotfinder' in line:
         f.write('SConscript("dxtbx/SConscript")')
         f.write('\n')
-      if 'prime' in line:
-        continue
       f.write(line)
       f.write('\n')
 
