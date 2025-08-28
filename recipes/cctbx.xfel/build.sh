@@ -9,6 +9,12 @@ cd uc_metrics
 git lfs install --local
 git lfs pull
 cd ../..
+
+if [[ ! -z "$MACOSX_DEPLOYMENT_TARGET" ]]; then
+  sed -i '' "s/env.write_python_and_show_path_duplicates()/#/g" ./modules/cctbx_project/libtbx/auto_build/conda_build/update_libtbx_env.py
+else
+  sed -i "s/env.write_python_and_show_path_duplicates()/#/g" ./modules/cctbx_project/libtbx/auto_build/conda_build/update_libtbx_env.py
+fi
 # temporary
 
 # Use -O3 optimization
@@ -35,7 +41,7 @@ cd ../../..
 export CCTBX_SKIP_CHEMDATA_CACHE_REBUILD=1
 mkdir build
 cd build
-libtbx.configure xfel uc_metrics
+libtbx.configure xfel uc_metrics --no_bin_python
 
 # fix SConstruct
 ${PYTHON} ${RECIPE_DIR}/fix_sconstruct.py
@@ -61,6 +67,14 @@ fi
 # install
 CCTBX_CONDA_BUILD=./modules/cctbx_project/libtbx/auto_build/conda_build
 ./build/bin/libtbx.python ${CCTBX_CONDA_BUILD}/install_build.py --preserve-egg-dir
+
+# copy libtbx_env and update dispatchers
+./build/bin/libtbx.python ${CCTBX_CONDA_BUILD}/update_libtbx_env.py
+if [[ -f "${PREFIX}/python.app/Contents/MacOS/python" ]]; then
+  ${PREFIX}/python.app/Contents/MacOS/python ${CCTBX_CONDA_BUILD}/update_libtbx_env.py
+else
+  ${PYTHON} ${CCTBX_CONDA_BUILD}/update_libtbx_env.py
+fi
 
 # remove extra copies of dispatchers
 echo Removing some duplicate dispatchers
