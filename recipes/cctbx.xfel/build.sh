@@ -86,6 +86,7 @@ find ${PREFIX}/bin -name "*show_build_path" -not -name "libtbx.show_build_path" 
 
 # remove extraneous stuff
 rm -fr ${PREFIX}/cxi_user
+rm -fr ${PREFIX}/python.app
 rm -fr ${PREFIX}/lib/gdk-pixbuf-2.0
 rm -fr ${PREFIX}/lib/gtk-3.0
 rm -fr ${PREFIX}/share/cctbx
