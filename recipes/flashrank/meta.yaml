@@ -1,0 +1,45 @@
+{% set name = "flashrank" %}
+{% set version = "0.2.10" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/FlashRank-{{ version }}.tar.gz
+  sha256: f8f82a25c32fdfc668a09dc4089421d6aab8e7f71308424b541f40bb3f01d9db
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+  run:
+    - python >=3.6
+    - tokenizers
+    - onnxruntime
+    - numpy
+    - requests
+    - tqdm
+
+test:
+  imports:
+    - flashrank
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/PrithivirajDamodaran/FlashRank
+  summary: Ultra lite & Super fast SoTA cross-encoder based re-ranking for your search & retrieval pipelines.
+  license: Apache-2.0
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - bkpoon
