@@ -47,7 +47,7 @@ requirements:
     - libsqlite
     - libuuid
     - libxcrypt
-    - libxml2
+    - libxml2-devel
     - lua
     - oniguruma
     - openssl
