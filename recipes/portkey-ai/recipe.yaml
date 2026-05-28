@@ -1,0 +1,51 @@
+schema_version: 1
+
+context:
+  version: "2.3.1"
+
+package:
+  name: portkey-ai
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/portkey-ai/portkey_ai-${{ version }}.tar.gz
+  sha256: 383c15d3d52003d108d703d52d38c263db24223d85e28eed62b417d79b9e5691
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python >=3.8
+    - setuptools
+    - pip
+  run:
+    - python >=3.8
+    - httpx
+    - typing_extensions <5.0,>=4.7.1
+    - pydantic >=1.10.8
+    - anyio <5,>=3.5.0
+    - distro <2,>=1.7.0
+    - sniffio
+    - cached-property
+    - tqdm >4
+    - types-requests
+    - jiter <1,>=0.4.0
+
+tests:
+  - python:
+      imports:
+        - portkey_ai
+      pip_check: true
+
+about:
+  summary: Python client library for the Portkey API
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/Portkey-AI/portkey-python-sdk
+
+extra:
+  recipe-maintainers:
+    - bkpoon
