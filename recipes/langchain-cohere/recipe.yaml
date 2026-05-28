@@ -1,0 +1,46 @@
+schema_version: 1
+
+context:
+  version: "0.5.1"
+
+package:
+  name: langchain-cohere
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/l/langchain-cohere/langchain_cohere-${{ version }}.tar.gz
+  sha256: 11128c04e0cf3d0731b7db4af0fdc2edc41be135647fc1e534ab60a9236a01b0
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python >=3.10,<4.0
+    - poetry-core
+    - pip
+  run:
+    - python >=3.10,<4.0
+    - langchain-core >=1.2.16,<2.0
+    - cohere >=5.18.0,<6.0
+    - langchain-community >=0.4.0,<0.5.0
+    - pydantic >=2,<3
+    - types-pyyaml >=6.0.12,<7.0.0
+
+tests:
+  - python:
+      imports:
+        - langchain_cohere
+      pip_check: true
+
+about:
+  summary: An integration package connecting Cohere and LangChain
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/langchain-ai/langchain-cohere
+
+extra:
+  recipe-maintainers:
+    - bkpoon
