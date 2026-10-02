@@ -20,7 +20,7 @@ source:
     folder: wsgi
 
 build:
-  skip: true  # [not linux]
+  skip: true  # [not linux or py>311]
   number: 0
 
 requirements:
