@@ -1,5 +1,5 @@
 {% set name = "httpd" %}
-{% set version = "2.4.67" %}
+{% set version = "2.4.69" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,16 @@ package:
 
 source:
   - url: https://dlcdn.apache.org/httpd/{{ name }}-{{ version }}.tar.bz2
-    sha256: 66cd206637b0d5c446fa7dabe75fe03525da8fb55855876c46288cd88b136aa4
+    sha256: c5e6ebc66e349b87d7fc6916ae7cc2a808ed348003de134cf9e9d89d3e2cc73d
     folder: httpd
   - url: https://dlcdn.apache.org//apr/apr-1.7.6.tar.bz2
     sha256: 49030d92d2575da735791b496dc322f3ce5cff9494779ba8cc28c7f46c5deb32
     folder: apr
-  - url: https://dlcdn.apache.org//apr/apr-util-1.6.3.tar.bz2
-    sha256: a41076e3710746326c3945042994ad9a4fcac0ce0277dd8fea076fec3c9772b5
+  - url: https://dlcdn.apache.org//apr/apr-util-1.6.5.tar.bz2
+    sha256: 96de1dd6f6a0476d2d2e7964926d8c1ddc3bb0e210e1b1812d3ba5a454a392e2
     folder: apr-util
-  - url: https://github.com/GrahamDumpleton/mod_wsgi/archive/refs/tags/5.0.2.tar.gz
+  - url: https://github.com/GrahamDumpleton/mod_wsgi/releases/download/mod_wsgi-6.1.0/mod_wsgi-6.1.0.tar.gz
+    sha256: 9ebb645c899ea6461edf27872c11a6a12c6e819edbcc3652e0b6195d990aa31c
     folder: wsgi
 
 build:
