@@ -27,7 +27,6 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
-    - {{ compiler('cxx') }}
     - libtool
     - make
     - perl
@@ -40,7 +39,6 @@ requirements:
     - libxcrypt
     - openssl
     - pcre2
-    - perl
     - python
   run:
     - libexpat
@@ -50,7 +48,6 @@ requirements:
     - libxcrypt
     - openssl
     - pcre2
-    - python
 
     - django
     - latexcodec
