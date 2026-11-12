@@ -1,5 +1,5 @@
 {% set name = "httpd" %}
-{% set version = "2.4.70" %}
+{% set version = "2.4.71" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://dlcdn.apache.org/httpd/{{ name }}-{{ version }}.tar.bz2
-    sha256: 1eefd7dc95836c5872894ce8e6a37f773d5a6764f0766869d39b8bcf0b1bafc3
+    sha256: 2bc5da5a33c247341de082717d4ebcb5cb49e8b73a05b7fddf7d5d6dc2f8de62
     folder: httpd
   - url: https://dlcdn.apache.org//apr/apr-1.7.6.tar.bz2
     sha256: 49030d92d2575da735791b496dc322f3ce5cff9494779ba8cc28c7f46c5deb32
@@ -53,8 +53,8 @@ requirements:
 
     - django
     - latexcodec
-    - mysql
-    - postgresql
+    - mysql =8
+    - postgresql =16
     - psycopg2
     - pybtex
     - pytz
